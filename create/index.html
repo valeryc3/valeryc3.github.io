@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Quicksand" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <title></title>
+  
+    <style>
+        
+h1 {
+  size:50px;
+  color:white;
+  font-family: 'Quicksand', sans-serif;
+}
+img{
+  width:50px;
+}
+body{
+text-align:center;
+  background-color:grey;
+}
+#Flower{
+  background-color: white;
+    color: black;
+    border: 2px solid pink;
+  
+}
+#Sun{
+  background-color: white;
+    color: black;
+    border: 2px solid yellow;
+  
+}
+#Cloud{
+  background-color: white;
+    color: black;
+    border: 2px solid lightblue;
+  
+}
+
+</style>
+  </head>
+  <body> 
+    <h1>Slide</h1>
+    
+    
+   
+    <p> 
+      
+       <button id="Flower">Flower<br><img src= "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fflower.png?1524001233150"> </button><br><br>
+       <button id="Cloud">Cloud<br> <img src = "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fcloud16.png?1524001129117"></button><br><br>
+       <button id="Sun">Sun<br><img src = "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fsun.png?1524001269901"></button>
+     
+    </p>
+        
+    <script>
+     /* global loadImage  */
+let img;
+let cx=0;
+let cy=0;
+let nx=0;
+let ny=0;
+let cimg;
+let nimg;
+let ClImg;
+let SuImg;
+let FlImg;
+let d;
+let VT;
+let Cloud = "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fcloud16.png?1524001129117";
+let Sun="https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fsun.png?1524001269901";
+let Flower="https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fflower.png?1524001233150";
+
+function preload(){
+   ClImg = loadImage(Cloud); 
+  SuImg = loadImage(Sun); 
+  FlImg = loadImage(Flower); 
+  
+
+}
+
+
+function setup()
+{
+    ClImg.resize(300, 0);
+    ClImg.loadPixels();
+  SuImg.resize(300, 0);
+   SuImg.loadPixels();
+ FlImg.resize(300, 0);
+  FlImg.loadPixels();
+   createCanvas(ClImg.width, ClImg.height);
+}
+
+function draw()
+{
+  background(255);
+  if(cimg != undefined)
+  {
+    image(cimg,cx,cy);
+  }
+  if(nimg != undefined)
+  {
+    image(nimg,nx,ny);
+  }
+  slide();
+  
+}
+function slide()
+{
+ if(nx != 0)
+ {
+ cx=cx-20;
+  nx=nx-20;
+   
+ }
+  else if(nimg != undefined)
+  {
+    cimg=nimg;
+    cx=nx;
+  }
+   
+} 
+  
+$("#Flower").click(function(){
+
+  if(cimg===undefined)
+  {
+    cimg=FlImg;
+  }
+  else
+  { 
+    nimg=FlImg;
+    nx= width;
+  }
+  VT="Flower";
+  
+
+ });
+
+$("#Sun").click(function(){
+  
+ if(cimg===undefined)
+  {
+    cimg=SuImg;
+  }
+  else
+  { 
+    nimg=SuImg;
+    nx= width;
+  }
+ VT="Sun";
+  
+
+ });
+
+
+$("#Cloud").click(function(){
+   if(cimg===undefined)
+  {
+    cimg=ClImg;
+  }
+  else
+  { 
+    nimg=ClImg;
+    nx= width;
+  }
+VT="Cloud";
+  
+
+});
+
+
+
+function drawCloud()
+{
+
+ slide(ClImg);
+
+  
+}
+function drawSun()
+{
+ slide(SuImg);
+  
+}
+function drawFlower()
+{
+  slide(FlImg);
+  
+}
+
+    </script>
+  </body>
+</html>

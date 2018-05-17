@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <link href="stylesheet.css" rel="stylesheet"/>
+        
+         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+         <script type="text/javascript" src="script.js"></script>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Rosario" rel="stylesheet">
+    </head>
+    <body>
+      <div class="page">
+
+      <div class="content">
+          <h1>Valery</h1>
+          <h2>Ap Create Task</h2>
+          <div>
+        <button class="menu">
+             <i class="material-icons">menu</i>
+        </button>
+  
+        <div class="nav">
+        <a class="nav-item" href="index.html">Home</a>
+        <a class="nav-item" href="ap-explore.html">Explore</a>
+        <a class="nav-item" href="strengths.html">strengths</a>
+        <a class="nav-item" href="college.html">College</a>
+        <a class="nav-item" href="tech-in-my-life.html">Technology</a>
+</div>
+   </div>
+   <h4>2a)</h4>
+   <p>
+My program was written in javascript and using p5.js  library. The website I used to create my code was Glitch. The purpose of my program was to have 3 images and have a sliding transition. While one image came into the canvas the previous image was pushed off the screen. In this video clip, you can see that when a button, of an image, is pressed the image slides, to the left, into the canvas and the image that was originally there is pushed off the screen until the corresponding button is pressed. 
+</p>
+<h4>2b)</h4>
+<p>
+My partner and I used iterative pair programming by using glitch, splitting up the work, and coding at the same time. The first developmental challenge I encountered collaboratively was creating new functions so that each image would run individually when the corresponding button is clicked and writing the correct code in them so that the the correct image would show at the right time. At first me and my partner try to solve this problem by writing the function that would make the images run and show up.Then we tried calling the functions inside the if statements and that did not work. We solved it by calling that function inside each individual function for the images and putting parameters which was the images name . To make the image show when the button is pressed I created an if statement that said if the button was pressed run the code with the image parameter. By myself, I was able to take an image and make a sliding transition to the left and if there was a image already on the canvas, be able to push it of the canvas. I made a function called slide and I wrote an if statement that made the images slide. Then I called the slide function with the images inside a unique function to each image .  Then I called the function with the slide function inside in the click handler with an if statement. 
+</p>
+<h4>2c)</h4>
+<p>
+function draw() {
+    background(255);
+    if (cimg != undefined) {
+        image(cimg, cx, cy);
+    }
+    if (nimg != undefined) {
+        image(nimg, nx, ny);
+    }
+    slide();
+
+}
+The main algorithm I used is the draw function. Inside the draw function, the blocks of code are creating a sliding visual. It does does this by having two if statements and calling the slide function. 
+
+</p>
+<p>
+if (cimg != undefined) {
+    image(cimg, cx, cy);
+}
+
+My first logical sublogarithmic are if statements. The if statement checks if the image has a value. If the button is not clicked then the image is not defined. If the image is defined, it shows it my moving the image to cx,cy. This is important because the program can not draw an image is the image is not defined. If this program did not include this algorithm the images would not show because the code does not know when to show it. 
+</p>
+<p>
+function slide() {
+    if (nx != 0) {
+        cx = cx - 20;
+        nx = nx - 20;
+
+    } else if (nimg != undefined) {
+        cimg = nimg;
+        cx = nx;
+    }
+
+}
+
+
+My second  Sub Algorithm is the slide function, the if statement inside this function says that if the next image is not equal 0. Then it moves the image 20 steps to the left by having the cx and nx equal their self minus 20. And if the next image is not undefined  then the current image is replaced by the next image. It does this by having coordinates of the first image are now the coordinates of the next image If this program did not include this algorithm the image would not move the images to the left or it will not switch the first image with the next image. Without this the visual would not happen.
+
+
+
+</p>
+<h4>2c)<h4>
+<p>
+function draw() {
+    background(255);
+    if (cimg != undefined) {
+        image(cimg, cx, cy);
+    }
+    if (nimg != undefined) {
+        image(nimg, nx, ny);
+    }
+    slide();
+
+}
+The main algorithm I used is the draw function. Inside the draw function, the blocks of code are creating a sliding visual. It does does this by having two if statements and calling the slide function. 
+<p>
+    
+<p>
+
+if (cimg != undefined) {
+    image(cimg, cx, cy);
+}
+
+My first logical sublogarithmic are if statements. The if statement checks if the image has a value. If the button is not clicked then the image is not defined. If the image is defined, it shows it my moving the image to cx,cy. This is important because the program can not draw an image is the image is not defined. If this program did not include this algorithm the images would not show because the code does not know when to show it. 
+
+</p>
+<p>
+function slide() {
+    if (nx != 0) {
+        cx = cx - 20;
+        nx = nx - 20;
+
+    } else if (nimg != undefined) {
+        cimg = nimg;
+        cx = nx;
+    }
+
+}
+
+
+My second  Sub Algorithm is the slide function, the if statement inside this function says that if the next image is not equal 0. Then it moves the image 20 steps to the left by having the cx and nx equal their self minus 20. And if the next image is not undefined  then the current image is replaced by the next image. It does this by having coordinates of the first image are now the coordinates of the next image If this program did not include this algorithm the image would not move the images to the left or it will not switch the first image with the next image. Without this the visual would not happen.
+
+
+
+</p>
+<h4>2d)</h4>
+<p>
+function slide() {
+    if (nx != 0) {
+        cx = cx - 20;
+        nx = nx - 20;
+
+    } else if (nimg != undefined) {
+        cimg = nimg;
+        cx = nx;
+    }
+
+}
+
+An example of an abstraction program is the slide() function. This is an abstraction because it take code that makes the sliding function and puts it in one place so that it is easy to access. This simplifies my program because it has the code to make the images slide in one function. This makes it easier because I can just call the function in different areas instead of writing the whole sliding code. This abstraction makes the code easier to read. If this abstraction was not present the sliding visual will not work because inside the abstraction is the code to make it do that. I would not be able to call the function in other parts but have to write the code multiple times.
+
+</p>
+   <br>
+   <br>
+           <iframe src="create/index.html" width="720px" height="720px"></iframe>
+ 
+            
+ </div>
+
+    </div>
+
+    </body>
+</html>

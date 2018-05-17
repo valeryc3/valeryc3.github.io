@@ -1,0 +1,32 @@
+.nav{
+ padding-top: 15px;
+ padding-left: 50px;
+}
+body{
+    background-color: pink;}
+.nav-item{
+    padding:10px;
+    border:1px solid black;
+}
+img{
+width:250px;
+}
+h3{
+
+border-bottom:2px solid black; 
+}
+ach{
+width:20px;
+}
+.content{
+text-align: center;
+margin:0 auto;
+width:720px;
+}
+p{
+font-family: 'Rosario', sans-serif;
+
+}
+h4{
+font-weight: bold;
+}
