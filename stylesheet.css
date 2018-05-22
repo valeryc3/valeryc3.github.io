@@ -3,11 +3,18 @@
  padding-left: 50px;
 }
 body{
-    background-color: pink;}
+    background-color: #A244F2 ;
+    
+}
 .nav-item{
     padding:10px;
     border:1px solid black;
 }
+     .page {
+        text-align: center;
+       
+        background-color: #A244F2 ;
+      }
 img{
 width:250px;
 }
@@ -22,11 +29,13 @@ width:20px;
 text-align: center;
 margin:0 auto;
 width:720px;
+ background-color: #DDA0DD	;
 }
 p{
 font-family: 'Rosario', sans-serif;
-
+font-weight:normal;
 }
 h4{
 font-weight: bold;
+border-bottom:2px solid black; 
 }
